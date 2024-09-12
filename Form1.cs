@@ -1,4 +1,8 @@
 ﻿
+
+using System.IO;
+using WMPLib;
+
 namespace Wurfel
 
 {
@@ -18,10 +22,12 @@ namespace Wurfel
             statusbar.Text = "Gespielt: " + gespielt + " mal."; 
             
             int win = probe.GetDiceWert();
+            
+
 
             probe.Animation(win, pictureBox1);
             Wieoft(win);
-
+            
 
         }
         public void Wieoft(int win)

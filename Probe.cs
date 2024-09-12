@@ -1,4 +1,4 @@
-﻿
+﻿using WMPLib;
 namespace Wurfel
 
 
@@ -7,7 +7,7 @@ namespace Wurfel
     
     public class Probe { 
     
-        public int one, two, three, four, five, six;
+   
         
 
         public int GetDiceWert()
@@ -24,7 +24,7 @@ namespace Wurfel
                 case 1:
                     try
                     {
-                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\1.jpg");
+                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\1.jpg");
 
                     }
                     catch (FileNotFoundException ex)
@@ -43,7 +43,7 @@ namespace Wurfel
                 case 2:
                     try
                     {
-                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\2.jpg");
+                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\2.jpg");
 
                     }
                     catch (FileNotFoundException ex)
@@ -61,7 +61,7 @@ namespace Wurfel
                 case 3:
                     try
                     {
-                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\3.jpg");
+                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\3.jpg");
 
                     }
                     catch (FileNotFoundException ex)
@@ -79,7 +79,7 @@ namespace Wurfel
                 case 4:
                     try
                     {
-                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\4.jpg");
+                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\4.jpg");
 
                     }
                     catch (FileNotFoundException ex)
@@ -98,7 +98,7 @@ namespace Wurfel
                 case 5:
                     try
                     {
-                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\5.jpg");
+                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\5.jpg");
 
                     }
                     catch (FileNotFoundException ex)
@@ -116,7 +116,7 @@ namespace Wurfel
                 case 6:
                     try
                     {
-                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\6.jpg");
+                        pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\6.jpg");
 
                     }
                     catch (FileNotFoundException ex)
@@ -140,9 +140,11 @@ namespace Wurfel
         public async void Animation(int ergebnis, PictureBox pictureBox)
         {
 
-            
-           
 
+
+            WindowsMediaPlayer player = new WindowsMediaPlayer();
+            player.URL = "C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\d6.mp3";
+            player.controls.play();
 
             /*
             pictureBox.Image = Image.FromFile("1.jpg");
@@ -163,19 +165,19 @@ namespace Wurfel
             try
             {
                 
-                pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\1.jpg");
+                pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\1.jpg");
                 await Task.Delay(100); 
 
-                pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\2.jpg");
+                pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\2.jpg");
                 await Task.Delay(100);
 
-                pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\3.jpg");
+                pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\3.jpg");
                 await Task.Delay(100);
 
-                pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\4.jpg");
+                pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\4.jpg");
                 await Task.Delay(100);
 
-                pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\source\\repos\\Wurfel\\5.jpg");
+                pictureBox.Image = System.Drawing.Image.FromFile("C:\\Users\\OkraszewT\\Source\\Repos\\egorusegorus\\Wurfel\\6.jpg");
                 await Task.Delay(100);
 
             }
@@ -189,10 +191,9 @@ namespace Wurfel
                 
                 MessageBox.Show($"Fehler: {ex.Message}");
             }
-            SetSite(ergebnis, pictureBox);
+           SetSite(ergebnis, pictureBox);
         }
         
-
     }
 
 }
